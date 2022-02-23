@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notification Animation</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    min-height: 100vh;
+    background: rgb(27, 26, 44);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 9.75rem;
+    height: 3rem;
+    background: rgb(66, 44, 80);
+    border-radius: 0.5rem;
+    border: 1px solid rgb(106, 65, 134);
+    color: rgb(136, 80, 211);
+    letter-spacing: 0.025rem;
+  }
+  
+  .wrapper {
+    display: flex;
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+  
+  .notif {
+    position: relative;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    background-color: rgb(136, 80, 211);
+  }
+  
+  .ping {
+    position: absolute;
+    background-color: rgb(136, 80, 211);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    Notification
+    <span class="wrapper">
+        <span class="ping"></span>
+    <span class="notif"></span>
+    </span>
+  </div>
+</body>
+
+</html>
